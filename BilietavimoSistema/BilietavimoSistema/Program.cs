@@ -58,17 +58,17 @@ namespace BilietavimoSistema
         }
         public static void SalesReport()
         {
-            Console.WriteLine($"Available tickets for Sale:{totalCreatedTicket10}");
-            Console.WriteLine($"Tickets sold:{totalSoldTicket10}");
-            Console.WriteLine($"Tickets balance:{TicketBalance10()}");
+            Console.WriteLine($"Available [1] tickets for Sale:{totalCreatedTicket10}");
+            Console.WriteLine($"Tickets [1] sold:{totalSoldTicket10}");
+            Console.WriteLine($"Tickets [1] balance:{TicketBalance10()}");
 
-            Console.WriteLine($"Available tickets for Sale:{totalCreatedTicket20}");
-            Console.WriteLine($"Tickets sold:{totalSoldTicket20}");
-            Console.WriteLine($"Tickets balance:{TicketBalance20()}");
+            Console.WriteLine($"Available [2] tickets for Sale:{totalCreatedTicket20}");
+            Console.WriteLine($"Tickets [2] sold:{totalSoldTicket20}");
+            Console.WriteLine($"Tickets [2] balance:{TicketBalance20()}");
 
-            Console.WriteLine($"Available tickets for Sale:{totalCreatedTicket30}");
-            Console.WriteLine($"Tickets sold:{totalSoldTicket30}");
-            Console.WriteLine($"Tickets balance:{TicketBalance30()}");
+            Console.WriteLine($"Available [3] tickets for Sale:{totalCreatedTicket30}");
+            Console.WriteLine($"Tickets [3] sold:{totalSoldTicket30}");
+            Console.WriteLine($"Tickets [3] balance:{TicketBalance30()}");
 
         }
         public static void CreateTicket()
