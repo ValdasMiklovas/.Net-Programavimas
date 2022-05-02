@@ -23,7 +23,6 @@ namespace BaigiamasisDarbas.Repository
             {
                 Clients.Add(new Client(client));
             }
-        
         }
         public List<Client> GetClient()
         {
@@ -44,8 +43,6 @@ namespace BaigiamasisDarbas.Repository
             naujasKlientas.Add(new Client(newClientName, clientId, newClientCredit));
             string csvFile = @"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net-Programavimas\BaigiamasisDarbas\CSV Failai\Client.csv";
             string invoiceCsv = @"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net-Programavimas\BaigiamasisDarbas\CSV Failai\invoice.csv";
-            
-
             foreach (var add in naujasKlientas)
             {
                 File.AppendAllText(csvFile, $"{add.ClientName};{add.ClientId};{add.Credit}\n");

@@ -67,8 +67,6 @@ namespace BaigiamasisDarbas.Repository
                     File.AppendAllText(invoiceCsv, $"{products.Barcode};{products.ProductName};{pieces};{totalPrice};{paid}\n");
                 }
             }
-
-
         }
     }
 }
