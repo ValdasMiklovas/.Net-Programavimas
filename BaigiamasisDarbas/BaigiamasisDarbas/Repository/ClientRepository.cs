@@ -17,11 +17,13 @@ namespace BaigiamasisDarbas.Repository
         {
             FileReader reader = new FileReader();
             Clients = new List<Client>();
-            var clientList = reader.CsvReader(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\BaigiamasisDarbas\CSV Failai\Client.csv");
+            var clientList = reader.CsvReader(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net - Programavimas\BaigiamasisDarbas\CSV Failai\Client.csv");
+
             foreach (var client in clientList)
             {
                 Clients.Add(new Client(client));
             }
+        
         }
         public List<Client> GetClient()
         {
@@ -40,8 +42,8 @@ namespace BaigiamasisDarbas.Repository
             double newClientCredit = Convert.ToDouble(Console.ReadLine());
             int clientId = IdGenerator();
             naujasKlientas.Add(new Client(newClientName, clientId, newClientCredit));
-            string csvFile = @"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\BaigiamasisDarbas\CSV Failai\Client.csv";
-            string invoiceCsv = @"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\BaigiamasisDarbas\CSV Failai\invoice.csv";
+            string csvFile = @"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net - Programavimas\BaigiamasisDarbas\CSV Failai\Client.csv";
+            string invoiceCsv = @"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net - Programavimas\BaigiamasisDarbas\CSV Failai\invoice.csv";
             foreach (var add in naujasKlientas)
             {
                 File.AppendAllText(csvFile, $"{add.ClientName};{add.ClientId};{add.Credit}\n");
@@ -71,7 +73,7 @@ namespace BaigiamasisDarbas.Repository
                         {
                             Console.Clear();
                             Console.WriteLine($"\tWelcome: {item.ClientName}");
-                            string invoice = @"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\BaigiamasisDarbas\CSV Failai\invoice.csv";
+                            string invoice = @"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net - Programavimas\BaigiamasisDarbas\CSV Failai\invoice.csv";
                             File.AppendAllText(invoice, $"{item.ClientName};");
                             work = false;
                         }
@@ -88,14 +90,14 @@ namespace BaigiamasisDarbas.Repository
         public void ClientReportPdf()
         {
             Workbook clientReport = new Workbook();
-            clientReport.LoadFromFile(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\BaigiamasisDarbas\CSV Failai\Client.csv", ",", 1, 1);
+            clientReport.LoadFromFile(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net - Programavimas\BaigiamasisDarbas\CSV Failai\Client.csv", ",", 1, 1);
             clientReport.ConverterSetting.SheetFitToPage = true;
             Worksheet page = clientReport.Worksheets[0];
             for (int i = 1; i < page.Columns.Length; i++)
             {
                 page.AutoFitColumn(i);
             }
-            clientReport.SaveToFile(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\BaigiamasisDarbas\CSV Failai\Store Clients.pdf");
+            clientReport.SaveToFile(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net - Programavimas\BaigiamasisDarbas\CSV Failai\Store Clients.pdf");
         }
     }
 }
