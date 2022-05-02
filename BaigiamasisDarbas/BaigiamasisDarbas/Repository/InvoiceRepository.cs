@@ -16,7 +16,7 @@ namespace BaigiamasisDarbas.Repository
         {
             FileReader reader = new FileReader();
             Invoices = new List<Invoice>();
-            var invoices = reader.CsvReader(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net - Programavimas\BaigiamasisDarbas\CSV Failai\invoice.csv");
+            var invoices = reader.CsvReader(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net-Programavimas\BaigiamasisDarbas\CSV Failai\invoice.csv");
             foreach (var invoice in invoices)
             {
                 Invoices.Add(new Invoice(invoice));
@@ -52,14 +52,15 @@ namespace BaigiamasisDarbas.Repository
         public void AllInvoicePdf()
         {
             Workbook allInvoice = new Workbook();
-            allInvoice.LoadFromFile(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net - Programavimas\BaigiamasisDarbas\CSV Failai\invoice.csv", ",", 1, 1);
+            allInvoice.LoadFromFile(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net-Programavimas\BaigiamasisDarbas\CSV Failai\invoice.csv", ",", 1, 1);
             allInvoice.ConverterSetting.SheetFitToPage = true;
             Worksheet page = allInvoice.Worksheets[0];
             for (int i = 1; i < page.Columns.Length; i++)
             {
                 page.AutoFitColumn(i);
             }
-            allInvoice.SaveToFile(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net - Programavimas\BaigiamasisDarbas\CSV Failai\Store Invoice.pdf");
+            allInvoice.SaveToFile(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net-Programavimas\BaigiamasisDarbas\CSV Failai\Store Invoice.pdf");
+            
         }
     }
 }

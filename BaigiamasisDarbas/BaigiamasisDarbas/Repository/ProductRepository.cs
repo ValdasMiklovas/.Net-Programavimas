@@ -16,7 +16,7 @@ namespace BaigiamasisDarbas.Repository
         {
             FileReader reader = new FileReader();
             Products = new List<Product>();
-            var warehouse = reader.CsvReader(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net - Programavimas\BaigiamasisDarbas\CSV Failai\Warhouse.csv");
+            var warehouse = reader.CsvReader(@"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net-Programavimas\BaigiamasisDarbas\CSV Failai\Warhouse.csv");
             foreach (var product in warehouse)
             {
                 Products.Add(new Product(product));
@@ -63,7 +63,7 @@ namespace BaigiamasisDarbas.Repository
                 if (index == pirkiniai.IndexOf(products))
                 {
                     double totalPrice = products.Price * pieces;
-                    string invoiceCsv = @"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net - Programavimas\BaigiamasisDarbas\CSV Failai\invoice.csv";
+                    string invoiceCsv = @"C:\Users\Vartotojas\Desktop\Mokslai\NET Programavimas\Second Try\Kodas\.Net-Programavimas\BaigiamasisDarbas\CSV Failai\invoice.csv";
                     File.AppendAllText(invoiceCsv, $"{products.Barcode};{products.ProductName};{pieces};{totalPrice};{paid}\n");
                 }
             }
